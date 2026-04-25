@@ -1,0 +1,19 @@
+PASSO A PASSO LOGIN SHOPEE
+
+1. Coloque o arquivo login-shopee.cjs na pasta do projeto
+2. No terminal rode:
+
+node login-shopee.cjs
+
+3. Vai abrir o navegador automático
+4. Faça login na Shopee
+5. Resolva captcha se aparecer
+6. Aguarde alguns segundos
+7. Feche o navegador
+
+PRONTO!
+
+Agora rode:
+node server.js
+
+O sistema vai usar a sessão logada automaticamente.
