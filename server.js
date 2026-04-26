@@ -357,7 +357,7 @@ app.post("/api/scrape", async (req, res) => {
 const BOT_API_URL = process.env.BOT_API_URL || "http://35.239.226.38:3001";
 app.get("/api/grupos", async (req, res) => {
   try {
-    const resposta = await axios.get(${BOT_API_URL}/grupos);
+    const resposta = await axios.get(`${BOT_API_URL}/grupos`);
     res.json(resposta.data);
   } catch (erro) {
     res.status(500).json({ ok: false, erro: "Bot indisponível" });
