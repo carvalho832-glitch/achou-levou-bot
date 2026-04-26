@@ -354,7 +354,34 @@ app.post("/api/scrape", async (req, res) => {
     });
   }
 });
+const BOT_API_URL = process.env.BOT_API_URL || "http://35.239.226.38:3001";
 
+app.get("/api/grupos", async (req, res) => {
+  try {
+    const resposta = await fetch(${BOT_API_URL}/grupos);
+    const dados = await resposta.json();
+    res.json(dados);
+  } catch (erro) {
+    res.status(500).json({ ok: false, erro: "Bot indisponível" });
+  }
+});
+
+app.post("/api/enviar", async (req, res) => {
+  try {
+    const resposta = await fetch(${BOT_API_URL}/enviar, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(req.body)
+    });
+
+    const dados = await resposta.json();
+    res.json(dados);
+  } catch (erro) {
+    res.status(500).json({ ok: false, erro: "Erro ao falar com o bot" });
+  }
+});
 app.listen(PORT, () => {
   console.log(`Achou Levou HARDCORE rodando em http://localhost:${PORT}`);
   console.log(`Perfil da Shopee: ${CHROME_PROFILE}`);
