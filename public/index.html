@@ -1,4 +1,5 @@
-!doctype html>
+<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
@@ -7,7 +8,8 @@
 <meta name="theme-color" content="#ff7a18" />
 <style>
 :root{--bg:#111827;--card:#182235;--muted:#a9b4c9;--text:#f8fafc;--border:rgba(255,255,255,.12);--orange:#ff7a18;--yellow:#ffd166;--green:#22c55e;--danger:#ef4444}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#263852 0,#111827 45%,#090e18 100%);color:var(--text)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#263852 0,#111827 45%,#090e18 100%);color:var(--text)}
 .hero{padding:22px 16px 14px;background:linear-gradient(135deg,#ff7a18,#ffb347);color:#201000;border-radius:0 0 28px 28px;box-shadow:0 10px 30px rgba(255,122,24,.25)}
 .hero h1{margin:0;font-size:30px}.hero p{margin:6px 0 0;font-weight:700;opacity:.8}.wrap{max-width:960px;margin:0 auto;padding:16px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:rgba(24,34,53,.96);border:1px solid var(--border);border-radius:22px;padding:16px;box-shadow:0 12px 36px rgba(0,0,0,.24)}
@@ -19,11 +21,137 @@ button{border:0;border-radius:15px;padding:14px 12px;font-weight:800;font-size:1
 .copybox{min-height:220px;padding:16px;background:#0f1726;border:1px dashed rgba(255,255,255,.22);border-radius:18px;white-space:pre-wrap;font-size:17px;line-height:1.55}
 .hint{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.4}.offer{background:#0f1726;border:1px solid var(--border);border-radius:18px;padding:14px;margin:10px 0}.offer h3{margin:0 0 6px;font-size:17px}.muted{color:var(--muted)}
 .miniBtns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.miniBtns button{padding:10px 12px;font-size:13px}
+.status{margin-top:10px;font-size:14px;color:var(--muted)}
+.groupBox{margin-top:14px;padding:12px;border:1px solid var(--border);border-radius:16px;background:#0f1726}
+.groupOption{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:15px;color:#f8fafc}
+.groupOption input{width:auto;transform:scale(1.2)}
 @media(max-width:780px){.grid{grid-template-columns:1fr}.wrap{padding:14px}.btns{grid-template-columns:1fr}}
 </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achou Levou Bot</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0f19;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .wrap {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .card {
+      background: #111827;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #22c55e;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      background: #020617;
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 14px;
+      margin-top: 14px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .green {
+      background: #16a34a;
+      color: #fff;
+    }
+
+    .orange {
+      background: #f59e0b;
+      color: #111;
+    }
+
+    .red {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .groupBox {
+      margin-top: 20px;
+      padding: 15px;
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid #334155;
+    }
+
+    .grupo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 18px;
+    }
+
+    .grupo input {
+      width: auto;
+      transform: scale(1.4);
+    }
+
+    #mensagem {
+      white-space: pre-wrap;
+      background: #020617;
+      border: 1px dashed #334155;
+      border-radius: 14px;
+      padding: 15px;
+      margin-top: 15px;
+      color: #e5e7eb;
+    }
+
+    #statusEnvio {
+      margin-top: 12px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+  </style>
 </head>
+
 <body>
-<header class="hero"><h1>Achou Levou 🚀</h1><p>Mensagem limpa mantendo seu link de afiliado.</p></header>
+<header class="hero"><h1>Achou Levou 🚀</h1><p>Mensagem inteligente mantendo seu link de afiliado.</p></header>
 <main class="wrap">
 <section class="grid">
 <div class="card">
@@ -31,12 +159,33 @@ button{border:0;border-radius:15px;padding:14px 12px;font-weight:800;font-size:1
 <label for="link">Link do produto / afiliado</label><input id="link" placeholder="Cole aqui seu link de afiliado">
 <div class="btns"><button class="secondary" onclick="puxarDados(event)">Puxar dados do link</button><button class="primary" onclick="gerarMensagem()">Gerar mensagem</button></div>
 <label for="titulo">Produto</label><input id="titulo" placeholder="Ex: Liquidificador Série 5000">
-<label for="preco">Preço</label><input id="preco" placeholder="Ex: R$269,00">
+<label for="preco">Preço atual</label><input id="preco" placeholder="Ex: R$269,00">
+<label for="precoAntigo">Preço antigo opcional</label><input id="precoAntigo" placeholder="Ex: R$399,00">
 <label for="cupom">Cupom opcional</label><input id="cupom" placeholder="Ex: DESCONTO10">
 <label for="imagem">URL da imagem opcional</label><input id="imagem" placeholder="https://...">
-<label for="descricao">Descrição curta e vendedora</label><textarea id="descricao" placeholder="Não entra mais na mensagem final. Pode deixar vazio."></textarea>
-<div class="btns"><button class="green" onclick="salvarOferta()">Salvar oferta</button><button class="secondary" onclick="copiarMensagem()">Copiar texto</button><button class="primary" onclick="abrirWhatsapp()">Abrir WhatsApp</button><button class="secondary" onclick="limparCampos()">Limpar</button></div>
-<div class="hint">Ao puxar dados, o app NÃO substitui seu link de afiliado. Ele mantém exatamente o link colado no campo.</div>
+<label for="descricao">Descrição curta e vendedora</label><textarea id="descricao" placeholder="Pode deixar vazio."></textarea>
+
+<div class="groupBox">
+  <strong>Enviar para:</strong>
+  <label class="groupOption">
+    <input type="checkbox" name="grupoDestino" value="achouLevou" checked>
+    Achou Levou
+  </label>
+  <label class="groupOption">
+    <input type="checkbox" name="grupoDestino" value="grupoTeste">
+    Grupo teste
+  </label>
+</div>
+
+<div class="btns">
+  <button class="green" onclick="salvarOferta()">Salvar oferta</button>
+  <button class="secondary" onclick="copiarMensagem()">Copiar texto</button>
+  <button class="primary" onclick="abrirWhatsapp()">Abrir WhatsApp</button>
+  <button class="danger" onclick="enviarParaGrupos(event)">Enviar para selecionados</button>
+</div>
+
+<div id="statusEnvio" class="status">Bot local: http://localhost:3001/enviar</div>
+<div class="hint">Marque um ou mais grupos. Deixe o bot.cjs rodando no terminal antes de enviar.</div>
 </div>
 <div class="card"><h2>Mensagem pronta</h2><div id="mensagem" class="copybox"></div></div>
 </section>
@@ -45,58 +194,339 @@ button{border:0;border-radius:15px;padding:14px 12px;font-weight:800;font-size:1
 <script>
 const $=(id)=>document.getElementById(id);
 function safe(v){return (v||"").trim();}
+function corrigirLink(link){ return (link || "").replaceAll("\\\\", "/"); }
+
+function numeroPreco(valor){
+  if(!valor) return null;
+  const limpo = String(valor).replace(/[^\d,\.]/g,"").replace(/\.(?=\d{3})/g,"").replace(",",".");
+  const n = Number(limpo);
+  return Number.isNaN(n) ? null : n;
+}
+
+function gruposSelecionados(){
+  return Array.from(document.querySelectorAll('input[name="grupoDestino"]:checked')).map(el => el.value);
+}
+
+function nomesGruposSelecionados(){
+  return Array.from(document.querySelectorAll('input[name="grupoDestino"]:checked')).map(el => el.parentElement.textContent.trim());
+}
+
 function montarMensagem(){
- const titulo=safe($("titulo").value)||"Produto em oferta";
- const preco=safe($("preco").value)||"Confira o preço";
- const link=safe($("link").value)||"https://";
+  const titulo = safe($("titulo").value) || "Produto em oferta";
+  const preco = safe($("preco").value) || "Confira o preço";
+  const precoAntigo = safe($("precoAntigo").value);
+  const cupom = safe($("cupom").value);
+  const link = corrigirLink(safe($("link").value)) || "https://";
 
- return `🔥 *ACHOU LEVOU*\n🛒 *${titulo}*\n💰 *${preco}*\n🔗 ${link}\n❤️ Corre porque oferta boa voa 😍`;
+  // Corrige visualmente o campo também
+  if($("link").value !== link && safe($("link").value)) $("link").value = link;
+
+  const frases = [
+    "Achou barato? Levou 😎",
+    "Preço bom não espera!",
+    "Piscou, perdeu 😂",
+    "Oferta boa voa rápido!",
+    "Quem viu primeiro economiza primeiro!",
+    "Essa é pra pegar antes que suba!"
+  ];
+
+  const frase = frases[Math.floor(Math.random() * frases.length)];
+
+  let destaque = "👀 OLHA ESSA OFERTA!";
+  const pAtual = numeroPreco(preco);
+  const pAntigo = numeroPreco(precoAntigo);
+
+  if(pAtual && pAntigo && pAntigo > pAtual){
+    const desconto = ((pAntigo - pAtual) / pAntigo) * 100;
+    if(desconto >= 50){
+      destaque = `💣 DESCONTO BRUTO! CAIU ${desconto.toFixed(0)}%`;
+    } else if(desconto >= 25){
+      destaque = `🔥 BAIXOU O PREÇO! ${desconto.toFixed(0)}% OFF`;
+    } else {
+      destaque = `📉 CAIU O PREÇO! ${desconto.toFixed(0)}% OFF`;
+    }
+  }
+
+  return `🔥 *ACHOU LEVOU!* 🔥
+
+${destaque}
+
+🛒 *${titulo}*
+
+${precoAntigo ? `❌ De: ${precoAntigo}\n` : ""}💰 *Por: ${preco}*
+
+${cupom ? `🎟️ Cupom: *${cupom}*\n\n` : ""}${frase}
+
+👉 Comprar agora:
+${link}
+
+⚠️ Preço pode mudar a qualquer momento.`;
 }
-function gerarMensagem(){$("mensagem").textContent=montarMensagem();}
+
+function gerarMensagem(){
+  $("mensagem").textContent = montarMensagem();
+}
+
 async function puxarDados(ev){
- const linkOriginal=safe($("link").value); if(!linkOriginal){alert("Cole o link primeiro.");return;}
- const btn=ev?.target; const old=btn?.textContent; if(btn){btn.textContent="Puxando...";btn.disabled=true;}
- try{
-  const res=await fetch("/api/scrape",{method:"POST",headers:{"Content-Type":"application/json; charset=utf-8"},body:JSON.stringify({url:linkOriginal})});
-  const data=await res.json();
-  if(data.ok){
-    if(data.title)$("titulo").value=data.title;
-    if(data.price)$("preco").value=data.price;
-    if(data.image)$("imagem").value=data.image;
-    if(data.description)$("descricao").value=data.description;
+  const linkOriginal = corrigirLink(safe($("link").value));
+  $("link").value = linkOriginal;
+  if(!linkOriginal){ alert("Cole o link primeiro."); return; }
 
-    // IMPORTANTÍSSIMO:
-    // Mantém exatamente o link de afiliado que você colou.
-    $("link").value = linkOriginal;
+  const btn = ev?.target;
+  const old = btn?.textContent;
+  if(btn){ btn.textContent = "Puxando..."; btn.disabled = true; }
 
-    gerarMensagem();
-    alert("Dados puxados ✅ seu link de afiliado foi mantido.");
-  } else alert(data.message||"Não consegui puxar os dados.");
- }catch(e){alert("Não consegui puxar os dados.");}
- finally{if(btn){btn.textContent=old;btn.disabled=false;}}
+  try{
+    const res=await fetch("/api/scrape",{method:"POST",headers:{"Content-Type":"application/json; charset=utf-8"},body:JSON.stringify({url:linkOriginal})});
+    const data=await res.json();
+
+    if(data.ok){
+      if(data.title)$("titulo").value=data.title;
+      if(data.price)$("preco").value=data.price;
+      if(data.oldPrice)$("precoAntigo").value=data.oldPrice;
+      if(data.image)$("imagem").value=data.image;
+      if(data.description)$("descricao").value=data.description;
+      $("link").value=linkOriginal;
+  <div class="wrap">
+    <h1>Achou Levou 🚀</h1>
+
+    <div class="card">
+      <h2>Nova oferta</h2>
+
+      <label>Link do produto / afiliado</label>
+      <input id="link" placeholder="Cole aqui seu link" />
+
+      <label>Produto</label>
+      <input id="titulo" placeholder="Ex: Grill Top Bpe01" />
+
+      <label>Preço atual</label>
+      <input id="preco" placeholder="Ex: R$229,90" />
+
+      <label>Preço antigo opcional</label>
+      <input id="precoAntigo" placeholder="Ex: R$399,90" />
+
+      <label>Cupom opcional</label>
+      <input id="cupom" placeholder="Ex: DESCONTO10" />
+
+      <label>URL da imagem opcional</label>
+      <input id="imagem" placeholder="https://..." />
+
+      <label>Descrição curta e vendedora</label>
+      <textarea id="descricao" placeholder="Ex: Grill potente, compacto e ideal para cozinha"></textarea>
+
+      <div class="groupBox">
+        <strong>Enviar para:</strong>
+
+        <label class="grupo">
+          <input type="checkbox" value="achouLevou" />
+          Achou Levou
+        </label>
+
+        <label class="grupo">
+          <input type="checkbox" value="grupoTeste" />
+          Grupo teste
+        </label>
+      </div>
+
+      <button class="green" onclick="gerarMensagem()">Gerar oferta</button>
+      <button class="secondary" onclick="copiarTexto()">Copiar texto</button>
+      <button class="orange" onclick="abrirWhatsapp()">Abrir WhatsApp</button>
+      <button class="red" onclick="enviarParaGrupos(event)">Enviar para grupos</button>
+
+      <p id="statusEnvio">Marque um ou mais grupos. Deixe o bot.cjs rodando na VPS.</p>
+    </div>
+
+    <div class="card">
+      <h2>Mensagem pronta</h2>
+      <div id="mensagem"></div>
+    </div>
+  </div>
+
+  <script>
+    const API_BOT = "http://35.239.226.38:3001";
+
+    const $ = (id) => document.getElementById(id);
+
+    function safe(valor) {
+      return valor && valor.trim().length > 0;
+    }
+
+    function gruposSelecionados() {
+      return Array.from(document.querySelectorAll('.grupo input:checked'))
+        .map(input => input.value);
+    }
+
+    function nomesGruposSelecionados() {
+      return Array.from(document.querySelectorAll('.grupo input:checked'))
+        .map(input => input.parentElement.textContent.trim());
+    }
+
+    function gerarMensagem() {
+      const titulo = $("titulo").value.trim();
+      const preco = $("preco").value.trim();
+      const precoAntigo = $("precoAntigo").value.trim();
+      const cupom = $("cupom").value.trim();
+      const link = $("link").value.trim();
+      const descricao = $("descricao").value.trim();
+
+      let msg = 🔥 *ACHOU LEVOU!* 🔥\n\n;
+
+      if (titulo) msg += 🛒 *${titulo}*\n\n;
+      if (descricao) msg += ${descricao}\n\n;
+      if (precoAntigo) msg += ❌ De: ${precoAntigo}\n;
+      if (preco) msg += ✅ *Por: ${preco}*\n;
+      if (cupom) msg += 🎟️ Cupom: *${cupom}*\n;
+
+      msg += \n👇 Comprar agora:\n${link};
+
+      $("mensagem").textContent = msg;
+      return msg;
+    }
+
+    async function copiarTexto() {
+      const msg = gerarMensagem();
+
+      try {
+        await navigator.clipboard.writeText(msg);
+        alert("Mensagem copiada ✅");
+      } catch (e) {
+        alert("Não consegui copiar. Copie manualmente.");
+      }
+    }
+
+    function abrirWhatsapp() {
+      const msg = encodeURIComponent(gerarMensagem());
+      window.open(https://wa.me/?text=${msg}, "_blank");
+    }
+
+    async function enviarParaGrupos(ev) {
+      gerarMensagem();
+      alert(data.oldPrice ? "Dados puxados ✅ preço atual e preço antigo encontrados." : "Dados puxados ✅ mas o preço antigo não apareceu nesse link. Pode preencher manualmente.");
+    } else alert(data.message||"Não consegui puxar os dados.");
+  }catch(e){alert("Não consegui puxar os dados.");}
+  finally{if(btn){btn.textContent=old;btn.disabled=false;}}
 }
+
+async function enviarParaGrupos(ev){
+  gerarMensagem();
+  const mensagem=$("mensagem").textContent;
+  const grupos=gruposSelecionados();
+  const nomes=nomesGruposSelecionados();
+  const btn=ev?.target;
+  const old=btn?.textContent;
+
+  if(!grupos.length){ alert("Selecione pelo menos um grupo."); return; }
+  if(!safe($("link").value)){ alert("Confira o link antes de enviar."); return; }
+  if(!confirm(`Enviar essa oferta para: ${nomes.join(", ")}?`)) return;
+
+  if(btn){btn.textContent="Enviando...";btn.disabled=true;}
+  $("statusEnvio").textContent="Enviando para os grupos selecionados...";
+
+  try{
+    const res=await fetch("https://achou-levou-bot.onrender.com/enviar",{method:"POST",headers:{"Content-Type":"application/json; charset=utf-8"},body:JSON.stringify({mensagem,grupos})});
+    const data=await res.json().catch(()=>({}));
+    if(res.ok && data.ok!==false){
+      $("statusEnvio").textContent=`Mensagem enviada ✅ (${nomes.join(", ")})`;
+      alert(`Mensagem enviada ✅\nGrupos: ${nomes.join(", ")}`);
+    }else throw new Error(data.erro||"Erro ao enviar.");
+  }catch(e){
+    $("statusEnvio").textContent="Erro: confira se o bot.cjs está rodando na porta 3001.";
+    alert("Não consegui enviar. Deixe o bot.cjs rodando no terminal e tente novamente.");
+  }finally{
+    if(btn){btn.textContent=old;btn.disabled=false;}
+  }
+}
+
 async function salvarOferta(){
- gerarMensagem();
- const body={titulo:$("titulo").value,preco:$("preco").value,cupom:$("cupom").value,link:$("link").value,imagem:$("imagem").value,descricao:$("descricao").value};
- const res=await fetch("/api/offers",{method:"POST",headers:{"Content-Type":"application/json; charset=utf-8"},body:JSON.stringify(body)});
- if(!res.ok){alert("Erro ao salvar oferta.");return;}
- await carregarHistorico(); alert("Oferta salva ✅");
+  gerarMensagem();
+  const body={titulo:$("titulo").value,preco:$("preco").value,precoAntigo:$("precoAntigo").value,cupom:$("cupom").value,link:corrigirLink($("link").value),imagem:$("imagem").value,descricao:$("descricao").value};
+  const res=await fetch("/api/offers",{method:"POST",headers:{"Content-Type":"application/json; charset=utf-8"},body:JSON.stringify(body)});
+  if(!res.ok){alert("Erro ao salvar oferta.");return;}
+  await carregarHistorico(); alert("Oferta salva ✅");
 }
+
 async function carregarHistorico(){
- const res=await fetch("/api/offers"); const ofertas=await res.json(); const box=$("historico");
- if(!ofertas.length){box.innerHTML="Nenhuma oferta salva ainda.";return;}
- box.innerHTML=ofertas.map(o=>`<div class="offer"><h3>${esc(o.titulo||"Sem título")}</h3><div><b>${esc(o.preco||"")}</b></div><div class="muted">${esc(o.link||"")}</div><div class="miniBtns"><button class="secondary" onclick="usarOferta('${o.id}')">Usar</button><button class="danger" onclick="excluirOferta('${o.id}')">Excluir</button></div></div>`).join("");
+  const res=await fetch("/api/offers"); const ofertas=await res.json(); const box=$("historico");
+  if(!ofertas.length){box.innerHTML="Nenhuma oferta salva ainda.";return;}
+  box.innerHTML=ofertas.map(o=>`<div class="offer"><h3>${esc(o.titulo||"Sem título")}</h3><div><b>${esc(o.preco||"")}</b></div>${o.precoAntigo?`<div class="muted">De: ${esc(o.precoAntigo)}</div>`:""}<div class="muted">${esc(o.link||"")}</div><div class="miniBtns"><button class="secondary" onclick="usarOferta('${o.id}')">Usar</button><button class="danger" onclick="excluirOferta('${o.id}')">Excluir</button></div></div>`).join("");
 }
+
 async function usarOferta(id){
- const res=await fetch("/api/offers"); const ofertas=await res.json(); const o=ofertas.find(x=>x.id===id); if(!o)return;
- $("titulo").value=o.titulo||""; $("preco").value=o.preco||""; $("cupom").value=o.cupom||""; $("link").value=o.link||""; $("imagem").value=o.imagem||""; $("descricao").value=o.descricao||""; gerarMensagem(); window.scrollTo({top:0,behavior:"smooth"});
+  const res=await fetch("/api/offers"); const ofertas=await res.json(); const o=ofertas.find(x=>x.id===id); if(!o)return;
+  $("titulo").value=o.titulo||""; $("preco").value=o.preco||""; $("precoAntigo").value=o.precoAntigo||""; $("cupom").value=o.cupom||""; $("link").value=corrigirLink(o.link||""); $("imagem").value=o.imagem||""; $("descricao").value=o.descricao||"";
+  gerarMensagem(); window.scrollTo({top:0,behavior:"smooth"});
 }
+
 async function excluirOferta(id){await fetch("/api/offers/"+id,{method:"DELETE"}); await carregarHistorico();}
 async function copiarMensagem(){gerarMensagem(); await navigator.clipboard.writeText($("mensagem").textContent); alert("Texto copiado ✅");}
 function abrirWhatsapp(){gerarMensagem(); window.open(`https://wa.me/?text=${encodeURIComponent($("mensagem").textContent)}`,"_blank");}
-function limparCampos(){["titulo","preco","cupom","link","imagem","descricao"].forEach(id=>$(id).value=""); gerarMensagem();}
+function limparCampos(){["titulo","preco","precoAntigo","cupom","link","imagem","descricao"].forEach(id=>$(id).value=""); gerarMensagem();}
 function esc(str){return String(str).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
 gerarMensagem(); carregarHistorico();
 </script>
+
+      const mensagem = $("mensagem").textContent;
+      const grupos = gruposSelecionados();
+      const nomes = nomesGruposSelecionados();
+      const btn = ev?.target;
+      const old = btn?.textContent;
+
+      if (!grupos.length) {
+        alert("Selecione pelo menos um grupo.");
+        return;
+      }
+
+      if (!safe($("link").value)) {
+        alert("Confira o link antes de enviar.");
+        return;
+      }
+
+      if (!confirm(Enviar essa oferta para: ${nomes.join(", ")}?)) {
+        return;
+      }
+
+      if (btn) {
+        btn.textContent = "Enviando...";
+        btn.disabled = true;
+      }
+
+      $("statusEnvio").textContent = "Enviando para os grupos selecionados...";
+
+      try {
+        const res = await fetch(${API_BOT}/enviar, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            mensagem,
+            grupos
+          })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          console.log(data);
+          alert("Não consegui enviar. Veja o terminal da VPS.");
+          $("statusEnvio").textContent = "Erro ao enviar.";
+          return;
+        }
+
+        $("statusEnvio").textContent = Mensagem enviada ✅ (${nomes.join(", ")});
+        alert("Mensagem enviada ✅");
+
+      } catch (err) {
+        console.error(err);
+        alert("Não consegui enviar. Deixe o bot.cjs rodando no terminal e tente novamente.");
+        $("statusEnvio").textContent = "Erro de conexão com o bot.";
+      } finally {
+        if (btn) {
+          btn.textContent = old || "Enviar para grupos";
+          btn.disabled = false;
+        }
+      }
+    }
+  </script>
 </body>
 </html>
