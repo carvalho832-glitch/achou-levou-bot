@@ -366,9 +366,9 @@ app.get("/api/grupos", async (req, res) => {
 
 app.post("/api/enviar", async (req, res) => {
   try {
-    const resposta = await axios.post(${BOT_API_URL}/enviar, req.body, {
-      headers: { "Content-Type": "application/json" }
-    });
+    const resposta = await axios.post(`${BOT_API_URL}/enviar`, req.body, {
+  headers: { "Content-Type": "application/json" }
+})
 
     res.json(resposta.data);
   } catch (erro) {
@@ -376,6 +376,5 @@ app.post("/api/enviar", async (req, res) => {
   }
 });
 app.listen(PORT, () => {
-  console.log(`Achou Levou HARDCORE rodando em http://localhost:${PORT}`);
-  console.log(`Perfil da Shopee: ${CHROME_PROFILE}`);
+  console.log("Perfil da Shopee:", CHROME_PROFILE || "não definido");
 });
